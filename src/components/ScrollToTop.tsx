@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 /**
@@ -8,7 +8,7 @@ import { usePathname, useSearchParams } from "next/navigation";
  * Ensures every page navigation starts from the top (window.scrollTo(0, 0))
  * while preserving natural browser back/forward behavior.
  */
-export function ScrollToTop() {
+function ScrollToTopInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const lastNavigationRef = useRef<string>("");
@@ -38,11 +38,19 @@ export function ScrollToTop() {
   return null;
 }
 
+export function ScrollToTop() {
+  return (
+    <Suspense fallback={null}>
+      <ScrollToTopInner />
+    </Suspense>
+  );
+}
+
 /**
  * Smooth scroll variant for pages that want animated scroll restoration.
  * Use this for routes that need a premium feel with smooth transitions.
  */
-export function ScrollToTopSmooth({
+function ScrollToTopSmoothInner({
   behavior = "smooth",
   delay = 0,
 }: {
@@ -77,6 +85,20 @@ export function ScrollToTopSmooth({
   }, [pathname, searchParams, behavior, delay]);
 
   return null;
+}
+
+export function ScrollToTopSmooth({
+  behavior = "smooth",
+  delay = 0,
+}: {
+  behavior?: ScrollBehavior;
+  delay?: number;
+}) {
+  return (
+    <Suspense fallback={null}>
+      <ScrollToTopSmoothInner behavior={behavior} delay={delay} />
+    </Suspense>
+  );
 }
 
 export default ScrollToTop;
