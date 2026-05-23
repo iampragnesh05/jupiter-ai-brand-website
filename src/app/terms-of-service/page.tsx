@@ -71,7 +71,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl font-bold text-white mb-4">Contact</h2>
               <p>
-                For questions about these Terms of Service, please contact us at hello@jupiter-ai.co
+                For questions about these Terms of Service, please contact us at info@jupiter-ai.co
               </p>
             </section>
           </div>

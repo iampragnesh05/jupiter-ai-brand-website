@@ -50,7 +50,7 @@ export default function ForInvestors() {
 
           {/* CTA */}
           <a
-            href="mailto:hello@jupiter-ai.co"
+            href="mailto:info@jupiter-ai.co"
             className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-purple hover:bg-purple/90 rounded-lg transition-colors"
           >
             Talk to the Founder

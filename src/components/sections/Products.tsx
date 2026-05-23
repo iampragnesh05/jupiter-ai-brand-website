@@ -45,7 +45,7 @@ export default function Products() {
       description:
         "Healthcare. Education. Real estate. Food. Each with its own dedicated AI tool built ground up for that industry.",
       cta: "Tell Us Your Industry →",
-      href: "mailto:hello@jupiter-ai.co",
+      href: "mailto:info@jupiter-ai.co",
       borderColor: "border-border",
       borderStyle: "border",
     },

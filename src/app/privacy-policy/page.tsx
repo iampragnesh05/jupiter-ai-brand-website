@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-bold text-white mb-4">Contact for privacy concerns</h2>
               <p>
-                If you have questions about this Privacy Policy or how we handle your data, please contact us at hello@jupiter-ai.co
+                If you have questions about this Privacy Policy or how we handle your data, please contact us at info@jupiter-ai.co
               </p>
             </section>
           </div>
