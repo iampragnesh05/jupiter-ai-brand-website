@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.jupiter-ai.co'),
   title: "Jupiter AI — AI Built For Indian Businesses",
   description: "Jupiter AI builds vertical AI tools for Indian businesses. Starting with fashion.",
   icons: {
