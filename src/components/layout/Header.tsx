@@ -75,6 +75,16 @@ export default function Header() {
                       <span>Jupiter Build</span>
                       <span className="text-xs text-muted">Any industry</span>
                     </Link>
+                    <Link
+                      href="/jupiter-intelligence"
+                      scroll={true}
+                      className="flex items-center justify-between px-4 py-2.5 text-sm text-white hover:bg-surface-2 transition-colors"
+                    >
+                      <span>Jupiter Intelligence</span>
+                      <span className="text-xs text-purple">
+                        E-commerce
+                      </span>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -82,6 +92,13 @@ export default function Header() {
 
             <Link href="/jupiter-build" scroll={true} className="text-sm text-subtle hover:text-white transition-colors">
               Jupiter Build
+            </Link>
+            <Link
+              href="/jupiter-intelligence"
+              scroll={true}
+              className="text-sm text-subtle hover:text-white transition-colors"
+            >
+              Jupiter Intelligence
             </Link>
 
             <Link href="/about" scroll={true} className="text-sm text-subtle hover:text-white transition-colors">
@@ -150,6 +167,14 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Jupiter Build
+                </Link>
+                <Link
+                  href="/jupiter-intelligence"
+                  scroll={true}
+                  className="text-lg text-white py-2 block"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Jupiter Intelligence
                 </Link>
 
                 <Link

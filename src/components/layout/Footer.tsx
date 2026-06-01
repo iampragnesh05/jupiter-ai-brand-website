@@ -193,6 +193,13 @@ export default function Footer() {
                 Jupiter Build
               </Link>
               <Link
+                href="/jupiter-intelligence"
+                scroll={true}
+                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
+              >
+                Jupiter Intelligence
+              </Link>
+              <Link
                 href="/about"
                 scroll={true}
                 className="block text-[0.9rem] text-muted hover:text-white transition-colors"
@@ -326,6 +333,13 @@ export default function Footer() {
             <h3 className="text-[0.75rem] font-semibold text-white mb-4 uppercase tracking-[0.12em]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}>Platform</h3>
             <div className="space-y-2.5">
               <Link href="/jupiter-build" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Jupiter Build</Link>
+              <Link
+                href="/jupiter-intelligence"
+                scroll={true}
+                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
+              >
+                Jupiter Intelligence
+              </Link>
               <Link href="/about" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>About</Link>
               <Link href="/contact" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Contact</Link>
             </div>
