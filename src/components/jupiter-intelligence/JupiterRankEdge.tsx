@@ -187,7 +187,7 @@ export default function JupiterRankEdge() {
                 Book Discovery Call →
               </a>
               <a
-                href="https://jupiterrank.jupiter-ai.co"
+                href="https://app.jupiterrank.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 border border-[#1E2235] hover:border-[#7C3AED] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm"
@@ -292,7 +292,7 @@ export default function JupiterRankEdge() {
                     Built and maintained by Jupiter AI
                   </span>
                   <a
-                    href="https://jupiterrank.jupiter-ai.co"
+                    href="https://app.jupiterrank.com/"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1.5 text-[#7C3AED] text-xs font-semibold hover:text-[#A78BFA] transition-colors"

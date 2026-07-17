@@ -195,7 +195,7 @@ export default function Hero() {
           id: (Date.now() + 1).toString(),
           role: "assistant",
           content:
-            "Connect your real data at jupiterrank.jupiter-ai.co to get personalised insights for your business. ✦",
+            "Connect your real data at app.jupiterrank.com to get personalised insights for your business. ✦",
         };
         setMessages((prev) => [...prev, assistantMessage]);
       }, 800);
@@ -231,7 +231,7 @@ export default function Hero() {
           <div className="flex flex-col items-start">
             {/* Badge */}
             <a
-              href="https://jupiterrank.jupiter-ai.co"
+              href="https://app.jupiterrank.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-white border border-purple/50 bg-purple/10 rounded-full hover:bg-purple/20 transition-colors"
@@ -325,7 +325,7 @@ export default function Hero() {
                       {/* CTA on last slide */}
                       {index === 2 && (
                         <a
-                          href="https://jupiterrank.jupiter-ai.co"
+                          href="https://app.jupiterrank.com/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block mt-auto pt-4 border-t border-border text-center text-[0.85rem] font-medium text-purple hover:text-lavender transition-colors"
@@ -375,7 +375,7 @@ export default function Hero() {
                 {/* URL Bar */}
                 <div className="mx-4 flex-1 max-w-[240px]">
                   <div className="bg-[#131620] rounded-md px-3 py-1">
-                    <span className="text-xs text-muted">jupiterrank.jupiter-ai.co</span>
+                    <span className="text-xs text-muted">app.jupiterrank.com</span>
                   </div>
                 </div>
 
@@ -599,12 +599,12 @@ export default function Hero() {
                                     <>
                                       Connect your real data at{" "}
                                       <a
-                                        href="https://jupiterrank.jupiter-ai.co"
+                                        href="https://app.jupiterrank.com/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-lavender hover:underline"
                                       >
-                                        jupiterrank.jupiter-ai.co
+                                        app.jupiterrank.com
                                       </a>{" "}
                                       to get personalised insights for your business. ✦
                                     </>

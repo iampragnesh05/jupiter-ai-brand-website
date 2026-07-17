@@ -4,9 +4,16 @@ export default function TermsOfService() {
       <section className="py-32 md:py-24 px-4 sm:px-6 lg:px-8 pt-32">
         <div className="max-w-[800px] mx-auto">
           <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white mb-8">Terms of Service</h1>
-          <p className="text-muted mb-8">Last updated: May 2026</p>
+          <p className="text-muted mb-8">Last updated: June 2026</p>
 
           <div className="space-y-8 text-muted">
+            <section>
+              <h2 className="text-xl font-bold text-white mb-4">About Us</h2>
+              <p>
+                Jupiter AI is a brand of KalpanaQ Labs LLP, a Limited Liability Partnership registered in Rajasthan, India. These Terms of Service govern your use of all products and services operated by KalpanaQ Labs LLP under the Jupiter AI brand.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-xl font-bold text-white mb-4">Use of service</h2>
               <p>
@@ -57,7 +64,14 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl font-bold text-white mb-4">Limitation of liability</h2>
               <p>
-                Jupiter AI provides services "as is" without warranties of any kind. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of our services.
+                KalpanaQ Labs LLP provides Jupiter AI services "as is" without warranties of any kind. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of our services.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-white mb-4">Governing law</h2>
+              <p>
+                These Terms of Service are governed by the laws of India. Any disputes arising from these terms shall be subject to the jurisdiction of courts in Rajasthan, India.
               </p>
             </section>
 
@@ -70,8 +84,14 @@ export default function TermsOfService() {
 
             <section>
               <h2 className="text-xl font-bold text-white mb-4">Contact</h2>
-              <p>
-                For questions about these Terms of Service, please contact us at info@jupiter-ai.co
+              <p className="mb-4">
+                For questions about these Terms of Service, please contact us at:
+              </p>
+              <p className="leading-relaxed">
+                KalpanaQ Labs LLP (Jupiter AI)<br />
+                Registered: Banswara, Rajasthan<br />
+                Operating: Udaipur, Rajasthan<br />
+                Email: <a href="mailto:info@jupiter-ai.co" className="hover:text-white transition-colors">info@jupiter-ai.co</a>
               </p>
             </section>
           </div>

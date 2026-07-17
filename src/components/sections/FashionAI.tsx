@@ -3,193 +3,225 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-function useIntersectionObserver(delay: number) {
-  const ref = useRef<HTMLDivElement>(null);
+export default function FashionAI() {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-
     return () => observer.disconnect();
-  }, [delay]);
+  }, []);
 
-  return { ref, isVisible };
-}
-
-export default function FashionAI() {
-  const headerAnim = useIntersectionObserver(0);
-  const cardsAnim = [
-    useIntersectionObserver(100),
-    useIntersectionObserver(200),
-    useIntersectionObserver(300),
-  ];
-  const buildAnim = useIntersectionObserver(400);
-
-  const fadeInClass = (isVisible: boolean) =>
-    `transition-all duration-600 ease-out ${
-      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+  // Helper for fade-in animations
+  const fadeUpClass = (delayClass: string, isBox = false) => {
+    const baseTranslate = isBox ? "translate-y-4" : "translate-y-8";
+    const duration = isBox ? "duration-500" : "duration-700";
+    return `transition-all ${duration} ${delayClass} ease-out ${
+      isVisible ? "opacity-100 translate-y-0" : `opacity-0 ${baseTranslate}`
     }`;
+  };
 
   return (
-    <section id="products" className="relative px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#08090A', padding: '80px 24px' }}>
-      <style jsx>{`
-        @media (max-width: 768px) {
-          section {
-            padding: 60px 20px !important;
-          }
-        }
-      `}</style>
-      <div className="max-w-[1200px] mx-auto">
-        {/* Header */}
-        <div ref={headerAnim.ref} className={`text-center mb-12 ${fadeInClass(headerAnim.isVisible)}`}>
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-purple mb-4">
-            FIRST VERTICAL
-          </p>
-          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-white mb-4">
-            Fashion AI
-          </h2>
-          <p className="text-lg text-muted max-w-[480px] mx-auto leading-relaxed">
-            A connected AI ecosystem built specifically for fashion brands.
-          </p>
-        </div>
+    <section
+      ref={sectionRef}
+      id="products"
+      className="py-20 md:py-28 max-w-[1100px] mx-auto px-6"
+    >
+      {/* Section Header (centered) */}
+      <div className="text-center mb-16">
+        <p
+          className={`text-[#7C3AED] text-xs font-semibold tracking-[0.12em] uppercase mb-4 text-center ${fadeUpClass(
+            "delay-[0ms]"
+          )}`}
+        >
+          LIVE NOW
+        </p>
+        <h2
+          className={`text-white font-extrabold text-3xl md:text-5xl leading-tight mb-6 text-center ${fadeUpClass(
+            "delay-[150ms]"
+          )}`}
+        >
+          Meet Jupiter Rank.<br />
+          <span className="bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] bg-clip-text text-transparent">
+            Your AI Store Intelligence.
+          </span>
+        </h2>
+        <p
+          className={`text-[#8892A4] text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-center ${fadeUpClass(
+            "delay-[300ms]"
+          )}`}
+        >
+          Connects with your real Google data, analyzes every product page, and
+          shows exactly where you are losing revenue — with every fix tied to
+          rupees.
+        </p>
+      </div>
 
-        {/* Three Product Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* Card 1 — Jupiter Rank (LIVE) */}
-          <div
-            ref={cardsAnim[0].ref}
-            className={`${fadeInClass(cardsAnim[0].isVisible)} bg-[#0F1117] border border-border border-l-[3px] border-l-purple rounded-2xl p-8 flex flex-col transition-all duration-200 hover:border-purple hover:shadow-[0_0_30px_rgba(124,58,237,0.1)]`}
-          >
-            {/* Badge */}
-            <span className="inline-block px-3 py-1 text-[0.7rem] font-semibold tracking-wide rounded-full mb-5" 
-                  style={{ background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#A78BFA' }}>
-              ✦ LIVE NOW
-            </span>
+      {/* Main Spotlight Card Outer Wrapper */}
+      <div className={`relative max-w-3xl mx-auto ${fadeUpClass("delay-[200ms]")}`}>
+        {/* Subtle purple glow behind card */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.06)_0%,transparent_70%)] pointer-events-none" />
 
-            {/* Icon */}
-            <div className="mb-4">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="18" cy="18" r="10" stroke="#7C3AED" strokeWidth="1.5" />
-                <line x1="25" y1="25" x2="34" y2="34" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" />
-                <line x1="14" y1="18" x2="22" y2="18" stroke="#7C3AED" strokeWidth="1.5" />
-                <line x1="18" y1="14" x2="18" y2="22" stroke="#7C3AED" strokeWidth="1.5" />
-              </svg>
-            </div>
-
-            {/* Content */}
-            <h3 className="text-xl font-bold text-white mb-1">Jupiter Rank</h3>
-            <p className="text-sm text-purple mb-4">AI SEO Mentor</p>
-            <p className="text-sm text-muted leading-relaxed flex-1 mb-5">
-              Connects with your Google data, scans your website, and shows exactly what to improve with real business impact behind every recommendation.
-            </p>
-
-            {/* Highlight box */}
-            <div className="bg-[#08090A] rounded-lg p-3 mb-6 border-l-2 border-purple">
-              <p className="text-sm text-[#C7D4F0]">
-                Found ₹45,000/month opportunity
-                <br />
-                in 10 seconds
-              </p>
-            </div>
-
-            {/* CTA */}
-            <a
-              href="/fashion-ai/jupiter-rank"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-purple text-white rounded-lg py-3 text-sm font-medium text-center hover:bg-purple/90 transition-colors"
-            >
-              Explore Jupiter Rank →
-            </a>
-          </div>
-
-          {/* Card 2 — Jupiter Chat (COMING) */}
-          <div
-            ref={cardsAnim[1].ref}
-            className={`${fadeInClass(cardsAnim[1].isVisible)} bg-[#0F1117] border border-border rounded-2xl p-8 flex flex-col transition-all duration-200 hover:border-muted`}
-          >
-            {/* Badge */}
-            <span className="inline-block px-3 py-1 text-[0.7rem] font-semibold tracking-wide rounded-full mb-5" 
-                  style={{ background: 'rgba(136,146,164,0.1)', border: '1px solid rgba(136,146,164,0.2)', color: '#8892A4' }}>
-              COMING SOON
-            </span>
-
-            {/* Icon */}
-            <div className="mb-4">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="8" width="24" height="16" rx="4" stroke="#8892A4" strokeWidth="1.5" />
-                <path d="M 8 24 L 4 30 L 14 24" stroke="#8892A4" strokeWidth="1.5" fill="none" />
-                <rect x="14" y="18" width="22" height="14" rx="4" stroke="#8892A4" strokeWidth="1.5" fill="#131620" />
-                <path d="M 32 32 L 36 36 L 26 32" stroke="#8892A4" strokeWidth="1.5" fill="none" />
-              </svg>
-            </div>
-
-            {/* Content */}
-            <h3 className="text-xl font-bold text-white mb-1">Jupiter Chat</h3>
-            <p className="text-sm text-muted mb-4">AI Customer Support</p>
-            <p className="text-sm text-muted leading-relaxed flex-1 mb-5">
-             Trained on your catalogue to answer product, size, and order questions across website, WhatsApp, and Instagram automatically.
-            </p>
-
-            {/* CTA */}
-            <a
-              href="/fashion-ai/jupiter-chat"
-              className="block w-full bg-transparent border border-border text-muted rounded-lg py-3 text-sm font-medium text-center hover:border-muted hover:text-white transition-colors"
-            >
-              Learn More →
-            </a>
-          </div>
-
-          {/* Card 3 — Jupiter Lens (COMING) */}
-          <div
-            ref={cardsAnim[2].ref}
-            className={`${fadeInClass(cardsAnim[2].isVisible)} bg-[#0F1117] border border-border rounded-2xl p-8 flex flex-col transition-all duration-200 hover:border-muted`}
-          >
-            {/* Badge */}
-            <span className="inline-block px-3 py-1 text-[0.7rem] font-semibold tracking-wide rounded-full mb-5" 
-                  style={{ background: 'rgba(136,146,164,0.1)', border: '1px solid rgba(136,146,164,0.2)', color: '#8892A4' }}>
-              COMING SOON
-            </span>
-
-            {/* Icon */}
-            <div className="mb-4">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="12" r="6" stroke="#8892A4" strokeWidth="1.5" />
-                <path d="M 8 36 C 8 28 12 24 20 24 C 28 24 32 28 32 36" stroke="#8892A4" strokeWidth="1.5" fill="none" />
-                <path d="M 14 20 L 10 30" stroke="#8892A4" strokeWidth="1" strokeDasharray="2 2" />
-                <path d="M 26 20 L 30 30" stroke="#8892A4" strokeWidth="1" strokeDasharray="2 2" />
-              </svg>
-            </div>
-
-            {/* Content */}
-            <h3 className="text-xl font-bold text-white mb-1">Jupiter Lens</h3>
-            <p className="text-sm text-muted mb-4">AI Fashion Visualization</p>
-            <p className="text-sm text-muted leading-relaxed flex-1 mb-5">
-              Transform product photos into AI generated fashion visuals, virtual try-ons, AI models, and motion content built for modern ecommerce brands.
-            </p>
-
-            {/* CTA */}
-            <a
-              href="/fashion-ai/jupiter-lens"
-              className="block w-full bg-transparent border border-border text-muted rounded-lg py-3 text-sm font-medium text-center hover:border-muted hover:text-white transition-colors"
-            >
-              Learn More →
-            </a>
-          </div>
-        </div>
-
+        {/* Card */}
+        <div
+          className="relative bg-[#0F1117] border border-[#7C3AED]/30 rounded-2xl overflow-hidden"
+          style={{ boxShadow: "0 0 80px rgba(124,58,237,0.15)" }}
+        >
+          {/* Card Top Bar */}
+          <div className="px-8 py-5 border-b border-[#1E2235] flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-green-400 text-xs font-semibold">LIVE</span>
               </div>
+              <span className="text-white font-bold text-base">Jupiter Rank</span>
+            </div>
+            <span className="text-[#A78BFA] text-xs font-semibold tracking-widest uppercase">
+              AI Store Intelligence
+            </span>
+          </div>
+
+          {/* Card Body */}
+          <div className="p-6 md:p-8">
+            {/* Top Stats Row */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {/* Stat 1 */}
+              <div
+                className={`bg-[#131620] border border-[#1E2235] rounded-xl p-3 md:p-4 text-center ${fadeUpClass(
+                  "delay-[300ms]",
+                  true
+                )}`}
+              >
+                <div className="text-xl md:text-2xl font-extrabold bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] bg-clip-text text-transparent">
+                  0–100
+                </div>
+                <div className="text-[#8892A4] text-xs mt-1">Jupiter Score</div>
+              </div>
+
+              {/* Stat 2 */}
+              <div
+                className={`bg-[#131620] border border-[#1E2235] rounded-xl p-3 md:p-4 text-center ${fadeUpClass(
+                  "delay-[400ms]",
+                  true
+                )}`}
+              >
+                <div className="text-xl md:text-2xl font-extrabold text-white">
+                  ₹6.9L+
+                </div>
+                <div className="text-[#8892A4] text-xs mt-1">Revenue Found</div>
+              </div>
+
+              {/* Stat 3 */}
+              <div
+                className={`bg-[#131620] border border-[#1E2235] rounded-xl p-3 md:p-4 text-center ${fadeUpClass(
+                  "delay-[500ms]",
+                  true
+                )}`}
+              >
+                <div className="text-xl md:text-2xl font-extrabold text-white">
+                  8
+                </div>
+                <div className="text-[#8892A4] text-xs mt-1">AI Modules</div>
+              </div>
+            </div>
+
+            {/* Feature List */}
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "Jupiter Score — combined SEO + CRO + AI visibility score (0-100)",
+                "Product Intelligence — every page analyzed with ₹ revenue impact",
+                "AI Shopping Suite — appear on ChatGPT, Gemini and Perplexity",
+                "90-Day Growth Plan — 26 tasks with revenue tied to every action",
+                "Festive Calendar — all Indian festivals with WhatsApp copy",
+                "Monday Digest — weekly revenue intelligence every Monday 8am IST",
+              ].map((feature, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#7C3AED]/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-[#7C3AED] text-xs">✓</span>
+                  </div>
+                  <span className="text-[#8892A4] text-sm">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Demo Result Box */}
+            <div className="bg-[#131620] border border-[#1E2235] rounded-xl p-5 mb-8">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-[#7C3AED]" />
+                <span className="text-[#8892A4] text-xs font-semibold uppercase tracking-wider">
+                  Real Demo Result — Notique Studio
+                </span>
+              </div>
+              <p className="text-white text-sm leading-relaxed">
+                ₹6,94,117/month revenue potential found across 37 products in minutes.
+              </p>
+              <div className="flex items-center gap-6 mt-3 flex-wrap">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1 h-1 rounded-full bg-[#7C3AED]" />
+                  <span className="text-[#8892A4] text-xs">Jupiter Score: 67/100</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1 h-1 rounded-full bg-[#7C3AED]" />
+                  <span className="text-[#8892A4] text-xs">Top fix: COD badge → ₹38,988/mo</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1 h-1 rounded-full bg-[#7C3AED]" />
+                  <span className="text-[#8892A4] text-xs">26-task growth plan generated</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="w-full">
+              <a
+                href="https://app.jupiterrank.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white py-4 rounded-xl font-semibold transition-all duration-200 text-base text-center block hover:shadow-[0_0_30px_rgba(124,58,237,0.3)]"
+              >
+                Try Jupiter Rank Free →
+              </a>
+              <div className="text-center mt-3">
+                <Link
+                  href="/fashion-ai/jupiter-rank"
+                  className="text-[#8892A4] text-sm hover:text-white transition-colors"
+                >
+                  See full product details →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Card Bottom Strip */}
+          <div className="px-8 py-4 border-t border-[#1E2235] bg-[#0D0F1C] flex flex-col md:flex-row items-center justify-between gap-2 md:gap-3 text-center md:text-left">
+            <span className="text-[#8892A4] text-xs">
+              Free 14-day trial · No credit card required
+            </span>
+            <div className="flex items-center gap-4">
+              {[
+                "GSC Connected",
+                "Real Data",
+                "₹ Impact",
+              ].map((trust, idx) => (
+                <div key={idx} className="flex items-center gap-1.5">
+                  <span className="text-[#7C3AED] text-xs">✓</span>
+                  <span className="text-[#8892A4] text-xs">{trust}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

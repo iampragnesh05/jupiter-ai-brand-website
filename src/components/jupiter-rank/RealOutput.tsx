@@ -97,7 +97,7 @@ function TeaserResponse() {
         "Great question! To get a personalised answer based on your real website data, connect your Google Search Console to Jupiter Rank.\n\nYour data will show:\n- Which specific pages need fixing\n- Exact rupee impact per recommendation\n- Platform-specific steps for your site\n\n**Ready to see your real opportunities?**"
       )}
       <a
-        href="https://jupiterrank.jupiter-ai.co"
+        href="https://app.jupiterrank.com/"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -450,7 +450,7 @@ export default function RealOutput() {
                   account to get insights specific to your brand.
                 </p>
                 <a
-                  href="https://jupiterrank.jupiter-ai.co"
+                  href="https://app.jupiterrank.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

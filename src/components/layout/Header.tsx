@@ -4,11 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const fashionAIProducts = [
-  { name: "Jupiter Rank", status: "Live ✓", href: "/fashion-ai/jupiter-rank" },
-  { name: "Jupiter Chat", status: "Coming", href: "/fashion-ai/jupiter-chat" },
-  { name: "Jupiter Lens", status: "Coming", href: "/fashion-ai/jupiter-lens" },
-];
+
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,74 +27,22 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {/* Products Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              <button className="text-sm text-subtle hover:text-white transition-colors flex items-center gap-1">
-                Products
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {dropdownOpen && (
-                <div className="absolute top-full left-0 pt-2">
-                  <div className="bg-surface border border-border rounded-xl shadow-xl min-w-[240px] py-3">
-                    <p className="px-4 py-2 text-xs font-semibold text-muted uppercase tracking-wider">
-                      Fashion AI
-                    </p>
-                    {fashionAIProducts.map((product) => (
-                      <Link
-                        key={product.name}
-                        href={product.href}
-                        scroll={true}
-                        className="flex items-center justify-between px-4 py-2.5 text-sm text-white hover:bg-surface-2 transition-colors"
-                      >
-                        <span>{product.name}</span>
-                        <span className={`text-xs ${product.status === "Live ✓" ? "text-purple" : "text-muted"}`}>
-                          {product.status}
-                        </span>
-                      </Link>
-                    ))}
-                    <div className="border-t border-border my-2" />
-                    <p className="px-4 py-2 text-xs font-semibold text-muted uppercase tracking-wider">
-                      Platform
-                    </p>
-                    <Link
-                      href="/jupiter-build"
-                      scroll={true}
-                      className="flex items-center justify-between px-4 py-2.5 text-sm text-white hover:bg-surface-2 transition-colors"
-                    >
-                      <span>Jupiter Build</span>
-                      <span className="text-xs text-muted">Any industry</span>
-                    </Link>
-                    <Link
-                      href="/jupiter-intelligence"
-                      scroll={true}
-                      className="flex items-center justify-between px-4 py-2.5 text-sm text-white hover:bg-surface-2 transition-colors"
-                    >
-                      <span>Jupiter Intelligence</span>
-                      <span className="text-xs text-purple">
-                        E-commerce
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <Link href="/jupiter-build" scroll={true} className="text-sm text-subtle hover:text-white transition-colors">
-              Jupiter Build
-            </Link>
             <Link
-              href="/jupiter-intelligence"
+              href="/fashion-ai/jupiter-rank"
               scroll={true}
-              className="text-sm text-subtle hover:text-white transition-colors"
+              className="text-sm text-subtle hover:text-white transition-colors flex items-center gap-1.5"
             >
-              Jupiter Intelligence
+              <span>Jupiter Rank</span>
+              <span
+                className="px-1.5 py-0.5 text-[0.65rem] font-semibold rounded-full"
+                style={{
+                  background: "rgba(124,58,237,0.15)",
+                  border: "1px solid rgba(124,58,237,0.3)",
+                  color: "#A78BFA",
+                }}
+              >
+                LIVE
+              </span>
             </Link>
 
             <Link href="/about" scroll={true} className="text-sm text-subtle hover:text-white transition-colors">
@@ -110,7 +54,7 @@ export default function Header() {
             </Link>
 
             <a
-              href="https://jupiterrank.jupiter-ai.co"
+              href="https://app.jupiterrank.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-purple hover:bg-purple/90 rounded-lg transition-colors"
@@ -140,41 +84,23 @@ export default function Header() {
           <div className="fixed inset-0 top-16 bg-[#08090A] md:hidden z-40">
             <nav className="px-4 py-8">
               <div className="flex flex-col gap-6">
-                <p className="text-xs font-semibold text-muted uppercase tracking-wider">
-                  Fashion AI
-                </p>
-                {fashionAIProducts.map((product) => (
-                  <Link
-                    key={product.name}
-                    href={product.href}
-                    scroll={true}
-                    className="text-lg text-white py-2 flex items-center justify-between"
-                    onClick={() => setMobileMenuOpen(false)}
+                <Link
+                  href="/fashion-ai/jupiter-rank"
+                  scroll={true}
+                  className="text-lg text-white py-2 flex items-center justify-between"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>Jupiter Rank</span>
+                  <span
+                    className="px-1.5 py-0.5 text-xs font-semibold rounded-full"
+                    style={{
+                      background: "rgba(124,58,237,0.15)",
+                      border: "1px solid rgba(124,58,237,0.3)",
+                      color: "#A78BFA",
+                    }}
                   >
-                    <span>{product.name}</span>
-                    <span className={`text-sm ${product.status === "Live ✓" ? "text-purple" : "text-muted"}`}>
-                      {product.status}
-                    </span>
-                  </Link>
-                ))}
-
-                <div className="border-t border-border my-4" />
-
-                <Link
-                  href="/jupiter-build"
-                  scroll={true}
-                  className="text-lg text-white py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Jupiter Build
-                </Link>
-                <Link
-                  href="/jupiter-intelligence"
-                  scroll={true}
-                  className="text-lg text-white py-2 block"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Jupiter Intelligence
+                    LIVE
+                  </span>
                 </Link>
 
                 <Link
@@ -196,7 +122,7 @@ export default function Header() {
                 </Link>
 
                 <a
-                  href="https://jupiterrank.jupiter-ai.co"
+                  href="https://app.jupiterrank.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-purple hover:bg-purple/90 rounded-lg transition-colors mt-4"

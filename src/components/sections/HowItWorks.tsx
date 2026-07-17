@@ -343,7 +343,7 @@ export default function HowItWorks() {
 
                     {/* CTA Button */}
                     <Link
-                      href="https://jupiterrank.jupiter-ai.co"
+                      href="https://app.jupiterrank.com/"
                       scroll={true}
                       target="_blank"
                       rel="noopener noreferrer"

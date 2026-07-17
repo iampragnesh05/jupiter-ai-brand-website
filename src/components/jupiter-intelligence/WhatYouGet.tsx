@@ -291,7 +291,7 @@ function Tab2Content() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <DiscoveryCTA />
           <a
-            href="https://jupiterrank.jupiter-ai.co"
+            href="https://app.jupiterrank.com/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 border border-[#1E2235] hover:border-[#7C3AED] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm"

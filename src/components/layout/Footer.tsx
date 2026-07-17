@@ -159,46 +159,15 @@ export default function Footer() {
                   LIVE
                 </span>
               </div>
-              <Link
-                href="/fashion-ai/jupiter-chat"
-                scroll={true}
-                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
-                style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}
-              >
-                Jupiter Chat
-              </Link>
-              <Link
-                href="/fashion-ai/jupiter-lens"
-                scroll={true}
-                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
-                style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}
-              >
-                Jupiter Lens
-              </Link>
             </div>
           </div>
 
-          {/* COLUMN 3 — Platform */}
+          {/* COLUMN 3 — Company */}
           <div>
             <h3 className="text-[0.85rem] font-semibold text-white mb-5 uppercase tracking-[0.15em]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
-              Platform
+              Company
             </h3>
             <div className="space-y-3">
-              <Link
-                href="/jupiter-build"
-                scroll={true}
-                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
-                style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}
-              >
-                Jupiter Build
-              </Link>
-              <Link
-                href="/jupiter-intelligence"
-                scroll={true}
-                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
-              >
-                Jupiter Intelligence
-              </Link>
               <Link
                 href="/about"
                 scroll={true}
@@ -232,8 +201,9 @@ export default function Footer() {
 
         {/* BOTTOM SECTION — copyright */}
         <div className="relative z-2 flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div className="text-[0.8rem] text-muted" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>
-            © 2026 Jupiter AI. Built for India 🇮🇳
+          <div className="text-[0.8rem] text-muted text-center md:text-left" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)', lineHeight: '1.5' }}>
+            © 2026 KalpanaQ Labs LLP.<br />
+            Jupiter AI is a brand of KalpanaQ Labs LLP.
           </div>
           <div className="flex items-center gap-2 text-[0.8rem] text-muted">
             <Link
@@ -323,23 +293,13 @@ export default function Footer() {
                 <Link href="/fashion-ai/jupiter-rank" scroll={true} className="text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Jupiter Rank</Link>
                 <span className="px-1.5 py-0.5 text-[0.55rem] font-medium rounded-full" style={{ background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', color: '#A78BFA' }}>LIVE</span>
               </div>
-              <Link href="/fashion-ai/jupiter-chat" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Jupiter Chat</Link>
-              <Link href="/fashion-ai/jupiter-lens" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Jupiter Lens</Link>
             </div>
           </div>
 
-          {/* Platform */}
+          {/* Company */}
           <div>
-            <h3 className="text-[0.75rem] font-semibold text-white mb-4 uppercase tracking-[0.12em]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}>Platform</h3>
+            <h3 className="text-[0.75rem] font-semibold text-white mb-4 uppercase tracking-[0.12em]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}>Company</h3>
             <div className="space-y-2.5">
-              <Link href="/jupiter-build" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Jupiter Build</Link>
-              <Link
-                href="/jupiter-intelligence"
-                scroll={true}
-                className="block text-[0.9rem] text-muted hover:text-white transition-colors"
-              >
-                Jupiter Intelligence
-              </Link>
               <Link href="/about" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>About</Link>
               <Link href="/contact" scroll={true} className="block text-[0.85rem] text-muted hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Contact</Link>
             </div>
@@ -355,7 +315,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col items-center gap-2 pt-6 pb-4 text-center">
-          <p className="text-[0.75rem] text-muted" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.9)' }}>© 2026 Jupiter AI. Built for India 🇮🇳</p>
+          <div className="text-[0.75rem] text-muted" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.9)', lineHeight: '1.5' }}>
+            © 2026 KalpanaQ Labs LLP.<br />
+            Jupiter AI is a brand of KalpanaQ Labs LLP.
+          </div>
           <div className="flex items-center gap-2 text-[0.75rem] text-muted flex-wrap justify-center">
             <Link href="/privacy-policy" scroll={true} className="hover:text-white transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Privacy Policy</Link>
             <span>·</span>

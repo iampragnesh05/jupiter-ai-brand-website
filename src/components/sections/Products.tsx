@@ -9,7 +9,7 @@ export default function Products() {
         "Connects to your Google data and tells you exactly what to fix to rank on page one. With rupee impact on every recommendation.",
       example: "Found ₹45,000/month opportunity in 10 seconds",
       cta: "Try Free for 3 Months →",
-      href: "https://jupiterrank.jupiter-ai.co",
+      href: "https://app.jupiterrank.com/",
       borderColor: "border-l-purple",
       borderStyle: "border-l-4",
     },

@@ -918,12 +918,147 @@ function AITopicsSection() {
   );
 }
 
+/* ─── Section 05: Legal & Company Details ─── */
+function LegalDetailsSection() {
+  const { ref, inView } = useInView(0.08);
+
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontSize: "0.75rem",
+    fontWeight: 600,
+    color: "#8899B4",
+    letterSpacing: "0.05em",
+    textTransform: "uppercase",
+    marginBottom: 4,
+  };
+
+  const valStyle: React.CSSProperties = {
+    fontSize: "0.95rem",
+    color: "#fff",
+    lineHeight: 1.5,
+  };
+
+  return (
+    <section
+      id="legal-details"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="relative overflow-hidden"
+      style={{ background: "#08090A", padding: "60px 24px 100px" }}
+    >
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(124,58,237,0.05) 0%, transparent 70%)",
+        }}
+      />
+      <ParticleField count={15} />
+
+      <div
+        className="relative max-w-[860px] mx-auto"
+        style={{
+          opacity: inView ? 1 : 0,
+          transform: inView ? "translateY(0)" : "translateY(40px)",
+          transition: "opacity 0.85s ease, transform 0.85s ease",
+        }}
+      >
+        {/* heading */}
+        <div className="text-center mb-10">
+          <h2
+            className="font-extrabold uppercase tracking-wider"
+            style={{ 
+              fontSize: "1.1rem", 
+              color: "#A78BFA", 
+              fontVariant: "small-caps",
+              letterSpacing: "0.15em" 
+            }}
+          >
+            Legal & Company Details
+          </h2>
+        </div>
+
+        {/* glass card */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.025)",
+            border: "1px solid rgba(124,58,237,0.14)",
+            borderRadius: 24,
+            padding: "clamp(24px, 4vw, 44px)",
+            backdropFilter: "blur(16px)",
+            boxShadow: "0 0 60px rgba(124,58,237,0.05), inset 0 1px 0 rgba(255,255,255,0.05)",
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "24px 32px",
+            }}
+          >
+            <div>
+              <span style={labelStyle}>Brand Name</span>
+              <p style={valStyle}>Jupiter AI</p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Legal Entity</span>
+              <p style={valStyle}>KalpanaQ Labs LLP</p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Registration</span>
+              <p style={valStyle}>Limited Liability Partnership registered in Rajasthan, India</p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Registered Address</span>
+              <p style={valStyle}>1/46, New Housing Board, Banswara, Rajasthan</p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Operating Address</span>
+              <p style={valStyle}>Udaipur, Rajasthan, India</p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Email</span>
+              <p style={valStyle}>
+                <a href="mailto:info@jupiter-ai.co" className="hover:text-[#A78BFA] transition-colors">
+                  info@jupiter-ai.co
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Phone</span>
+              <p style={valStyle}>
+                <a href="tel:+919116955257" className="hover:text-[#A78BFA] transition-colors">
+                  +91-9116955257
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <span style={labelStyle}>Website</span>
+              <p style={valStyle}>
+                <a href="https://jupiter-ai.co" target="_blank" rel="noopener noreferrer" className="hover:text-[#A78BFA] transition-colors">
+                  jupiter-ai.co
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Root Export ─── */
 export default function ContactPage() {
   return (
     <main style={{ background: "#08090A" }}>
       <HeroSection />
       <ContactFormSection />
+      <LegalDetailsSection />
       <DirectContactSection />
       <AITopicsSection />
     </main>

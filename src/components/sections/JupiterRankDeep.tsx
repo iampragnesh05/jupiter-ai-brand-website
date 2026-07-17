@@ -75,7 +75,7 @@ export default function JupiterRankDeep() {
 
             {/* CTA */}
             <a
-              href="https://jupiterrank.jupiter-ai.co"
+            href="https://app.jupiterrank.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-purple hover:bg-purple/90 rounded-lg transition-colors"

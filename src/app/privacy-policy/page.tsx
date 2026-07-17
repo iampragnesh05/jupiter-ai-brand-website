@@ -4,9 +4,16 @@ export default function PrivacyPolicy() {
       <section className="py-32 md:py-24 px-4 sm:px-6 lg:px-8 pt-32">
         <div className="max-w-[800px] mx-auto">
           <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white mb-8">Privacy Policy</h1>
-          <p className="text-muted mb-8">Last updated: May 2026</p>
+          <p className="text-muted mb-8">Last updated: June 2026</p>
 
           <div className="space-y-8 text-muted">
+            <section>
+              <h2 className="text-xl font-bold text-white mb-4">About Us</h2>
+              <p>
+                This Privacy Policy applies to all products and services offered by KalpanaQ Labs LLP (trading as Jupiter AI), a Limited Liability Partnership registered in Rajasthan, India.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-xl font-bold text-white mb-4">What data we collect</h2>
               <p className="mb-4">
@@ -61,9 +68,30 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-white mb-4">Contact for privacy concerns</h2>
+              <h2 className="text-xl font-bold text-white mb-4">Data Controller</h2>
+              <p className="leading-relaxed">
+                KalpanaQ Labs LLP is the data controller responsible for your personal information.<br />
+                Registered Address: Banswara, Rajasthan<br />
+                Operating Address: Udaipur, Rajasthan
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-white mb-4">Governing Law</h2>
               <p>
-                If you have questions about this Privacy Policy or how we handle your data, please contact us at info@jupiter-ai.co
+                This Privacy Policy is governed by the laws of India. Any disputes shall be subject to the jurisdiction of courts in Rajasthan, India.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-white mb-4">Contact for privacy concerns</h2>
+              <p className="mb-4">
+                If you have questions about this Privacy Policy or how we handle your data, please contact us at:
+              </p>
+              <p className="leading-relaxed">
+                KalpanaQ Labs LLP (Jupiter AI)<br />
+                Email: <a href="mailto:info@jupiter-ai.co" className="hover:text-white transition-colors">info@jupiter-ai.co</a><br />
+                Website: <a href="https://jupiter-ai.co" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">jupiter-ai.co</a>
               </p>
             </section>
           </div>

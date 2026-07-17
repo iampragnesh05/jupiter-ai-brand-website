@@ -94,7 +94,7 @@ export default function FashionAI() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start with Jupiter Rank</h2>
           <p className="text-lg text-muted mb-8">Our live product. 3 months free. No card required.</p>
           <Link
-            href="https://jupiterrank.jupiter-ai.co"
+            href="https://app.jupiterrank.com/"
             target="_blank"
             className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-purple hover:bg-purple/90 rounded-lg transition-colors"
           >

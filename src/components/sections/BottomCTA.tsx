@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export default function BottomCTA() {
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 border-t border-border" style={{ backgroundColor: '#08090A', padding: '80px 24px' }}>
@@ -24,7 +22,7 @@ export default function BottomCTA() {
       <div className="relative max-w-[700px] mx-auto text-center">
         {/* Heading */}
         <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold text-white leading-[1.2] mb-4">
-          <span className="block">Start with Jupiter Rank.</span>
+          <span className="block">Ready to grow your</span>
           <span
             className="block"
             style={{
@@ -34,25 +32,24 @@ export default function BottomCTA() {
               backgroundClip: "text",
             }}
           >
-           See real business insights in minutes.
+            store with AI?
           </span>
         </h2>
 
         {/* Subheading */}
         <p className="text-base text-muted leading-relaxed max-w-[500px] mx-auto mb-10">
-          Connect your Google account. Jupiter Rank analyzes your keywords, traffic, and website then shows exactly what to improve with real business impact behind every recommendation.
+          Jupiter Rank analyzes your store and shows exactly where you are losing revenue — with every fix tied to rupees.
         </p>
 
         {/* Primary CTA Button */}
-        <Link
-          href="/fashion-ai/jupiter-rank"
-          scroll={true}
+        <a
+          href="https://app.jupiterrank.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-purple text-white rounded-lg px-10 py-4 text-base font-semibold transition-colors hover:bg-purple/90"
         >
-          Try Jupiter Rank Free →
-        </Link>
+          Try Jupiter Rank →
+        </a>
 
         {/* Below Button */}
         <p className="text-[0.8rem] text-muted mt-2">
